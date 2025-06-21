@@ -38,7 +38,7 @@ seminggu.
 
 ## Cara Menjalankan
 ### 1.Clone Repository
-
+https://github.com/AlifAkbar99/UAS-PBO_FitTrack_FitTrackers.git
 
 ### 2. Intellij IDEA
 Jika sudah di download maka pastikan:
