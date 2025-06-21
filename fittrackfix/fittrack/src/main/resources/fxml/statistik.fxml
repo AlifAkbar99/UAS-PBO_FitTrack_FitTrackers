@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" styleClass="root-pane-beige" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="yourpackage.StatistikController">
+    <children>
+        <VBox alignment="CENTER" prefHeight="100.0" prefWidth="1280.0" style="-fx-background-color: #dE2A2A;" AnchorPane.topAnchor="0.0">
+            <Label fx:id="headerLabel" styleClass="title-label" style="-fx-font-size: 36px;" text="Statistik 7 Hari"/>
+        </VBox>
+        <ImageView fx:id="backButton" fitHeight="40.0" fitWidth="40.0" layoutX="40.0" layoutY="30.0" onMouseClicked="#handleGoBack" pickOnBounds="true" preserveRatio="true" styleClass="clickable-icon">
+            <image><Image url="@../img/arrow2.png" /></image>
+        </ImageView>
+
+        <BarChart fx:id="kaloriChart" layoutX="50.0" layoutY="150.0" prefHeight="500.0" prefWidth="800.0" title="Kalori Terbakar per Hari">
+            <xAxis><CategoryAxis label="Tanggal" side="BOTTOM" /></xAxis>
+            <yAxis><NumberAxis label="Kalori (kcal)" side="LEFT" /></yAxis>
+        </BarChart>
+
+        <VBox alignment="CENTER_LEFT" layoutX="880.0" layoutY="180.0" prefWidth="350.0" spacing="15.0">
+            <Label styleClass="card-title-red" text="Progres Mingguan"/>
+            <ProgressBar fx:id="progressKalori" prefWidth="350.0" progress="0.0" style="-fx-accent: #4CAF50;"/>
+            <Label fx:id="progressLabel" text="0 / 0 kcal"/>
+            <VBox fx:id="congratsBox" alignment="CENTER" spacing="10" style="-fx-padding: 20; -fx-background-color: #4CAF50; -fx-background-radius: 10;" visible="false">
+                <Label text="Selamat!" style="-fx-font-size: 24px; -fx-text-fill: white; -fx-font-weight: bold;"/>
+                <Label text="Kamu sudah melampaui target!" textAlignment="CENTER" textFill="white" wrapText="true"/>
+            </VBox>
+        </VBox>
+    </children>
+</AnchorPane>

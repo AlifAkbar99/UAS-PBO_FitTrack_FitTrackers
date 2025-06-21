@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.Cursor?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" styleClass="root-pane-beige" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="yourpackage.HasilBmrController">
+    <children>
+        <ImageView fx:id="backButton" fitHeight="40.0" fitWidth="40.0" layoutX="40.0" layoutY="30.0" onMouseClicked="#handleGoBack" pickOnBounds="true" preserveRatio="true" styleClass="clickable-icon">
+            <image><Image url="@../img/arrow.png" /></image>
+            <cursor><Cursor fx:constant="HAND" /></cursor>
+        </ImageView>
+        <Button layoutX="90.0" layoutY="30.0" onAction="#handleGoBack" text="Kembali ke Form" styleClass="calculate-button" style="-fx-background-color: #dE2A2A; -fx-text-fill: white; -fx-font-size: 14px;"/>
+
+        <AnchorPane layoutX="365.0" layoutY="100.0" prefHeight="520.0" prefWidth="550.0" styleClass="info-card">
+            <children>
+                <HBox alignment="CENTER" layoutX="14.0" layoutY="14.0" prefWidth="520.0" spacing="20.0">
+                    <Button fx:id="bmiButton" onAction="#handleGoToBMI" mnemonicParsing="false" styleClass="tab-button" text="BMI" />
+                    <Button mnemonicParsing="false" styleClass="tab-button-active" text="BMR" />
+                </HBox>
+
+                <GridPane hgap="20" layoutX="25.0" layoutY="90.0" prefWidth="500.0">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="300.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Label styleClass="card-title-small" text="Indeks BMR Anda" />
+                        <Label styleClass="card-title-small" text="Indeks TDEE Anda" GridPane.columnIndex="1" />
+
+                        <VBox alignment="CENTER" spacing="10" GridPane.rowIndex="1">
+                            <BarChart fx:id="bmrChart" animated="false" legendVisible="false" prefHeight="280" prefWidth="200" title="Estimasi BMR">
+                                <xAxis><CategoryAxis side="BOTTOM" /></xAxis>
+                                <yAxis><NumberAxis side="LEFT" /></yAxis>
+                            </BarChart>
+                            <Label fx:id="bmrLabel" styleClass="result-value-label" text="1616 kcal/hari" />
+                        </VBox>
+
+                        <VBox alignment="CENTER" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                            <Label fx:id="tdeeLabel" styleClass="result-value-large-label" text="2222" />
+                            <Label styleClass="result-unit-label" text="kcal/hari" />
+                            <Label fx:id="aktivitasLabel" styleClass="result-display-label" text="Olahraga Ringan" />
+                        </VBox>
+                    </children>
+                </GridPane>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" styleClass="root-pane-red" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="yourpackage.SignUpViewController">
+    <children>
+        <VBox alignment="CENTER" layoutX="440.0" layoutY="130.0" prefWidth="400.0" spacing="15.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-padding: 30;">
+            <children>
+                <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../img/speedred.png" />
+                    </image>
+                </ImageView>
+                <Label styleClass="card-title-red" text="Daftar Akun Baru" />
+                <Label text="Buat akun FitTrack Anda untuk memulai."/>
+                <TextField fx:id="usernameField" promptText="Username Baru" styleClass="input-field" />
+                <PasswordField fx:id="passwordField" promptText="Password" styleClass="input-field" />
+                <PasswordField fx:id="confirmPasswordField" promptText="Konfirmasi Password" styleClass="input-field" />
+                <Button onAction="#handleSignUp" prefWidth="400.0" text="Daftar" styleClass="calculate-button" style="-fx-font-size: 16px;"/>
+                <Hyperlink onAction="#handleGoToLogin" text="Sudah punya akun? Login di sini" />
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

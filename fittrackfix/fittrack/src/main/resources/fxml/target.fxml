@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.Cursor?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #dE2A2A;" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="yourpackage.TargetController">
+    <children>
+        <ImageView fx:id="backButton" fitHeight="40.0" fitWidth="40.0" layoutX="40.0" layoutY="30.0" onMouseClicked="#handleGoBack" pickOnBounds="true" preserveRatio="true" styleClass="clickable-icon">
+            <image><Image url="@../img/arrow2.png" /></image>
+            <cursor><Cursor fx:constant="HAND" /></cursor>
+        </ImageView>
+        <VBox alignment="CENTER" layoutX="340.0" layoutY="100.0" prefWidth="600.0" spacing="20.0">
+            <Label styleClass="title-label" text="Form Target Mingguan"/>
+            <GridPane hgap="10" vgap="15" prefWidth="550.0">
+                <columnConstraints>
+                    <ColumnConstraints prefWidth="250.0" />
+                    <ColumnConstraints prefWidth="300.0" />
+                </columnConstraints>
+                <Label styleClass="input-label" text="Target Kalori Mingguan" GridPane.rowIndex="0" />
+                <TextField fx:id="kaloriField" promptText="Contoh: 3500" styleClass="input-field" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                <Label styleClass="input-label" text="Target Durasi Mingguan (menit)" GridPane.rowIndex="1" />
+                <TextField fx:id="durasiField" promptText="Contoh: 150" styleClass="input-field" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                <Label styleClass="input-label" text="Periode Mulai" GridPane.rowIndex="2" />
+                <DatePicker fx:id="mulaiPicker" prefWidth="300.0" styleClass="input-field" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                <Label styleClass="input-label" text="Periode Selesai" GridPane.rowIndex="3" />
+                <DatePicker fx:id="selesaiPicker" prefWidth="300.0" styleClass="input-field" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+            </GridPane>
+            <Button onAction="#handleSaveTarget" prefHeight="50.0" prefWidth="200.0" styleClass="calculate-button" text="Simpan Target"/>
+        </VBox>
+    </children>
+</AnchorPane>

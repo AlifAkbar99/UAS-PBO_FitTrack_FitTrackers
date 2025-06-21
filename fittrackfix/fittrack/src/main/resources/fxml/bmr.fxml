@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.Cursor?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" styleClass="root-pane-beige" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="yourpackage.BmrController">
+    <children>
+        <ImageView fx:id="backButton" fitHeight="40.0" fitWidth="40.0" layoutX="40.0" layoutY="30.0" onMouseClicked="#handleGoBack" pickOnBounds="true" preserveRatio="true" styleClass="clickable-icon">
+            <image><Image url="@../img/arrowred.png" /></image>
+            <cursor><Cursor fx:constant="HAND" /></cursor>
+        </ImageView>
+
+        <AnchorPane layoutX="365.0" layoutY="80.0" prefHeight="560.0" prefWidth="550.0" styleClass="info-card">
+            <children>
+                <HBox alignment="CENTER" layoutX="14.0" layoutY="14.0" prefWidth="520.0" spacing="20.0">
+                    <Button fx:id="bmiButton" mnemonicParsing="false" onAction="#handleGoToBMI" styleClass="tab-button" text="BMI" />
+                    <Button mnemonicParsing="false" styleClass="tab-button-active" text="BMR" />
+                </HBox>
+
+                <GridPane hgap="10" layoutX="50.0" layoutY="90.0" vgap="15">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="300.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Label styleClass="input-label" text="Tanggal Lahir" GridPane.rowIndex="0" />
+                        <DatePicker fx:id="tanggalLahirPicker" prefWidth="300.0" styleClass="input-field" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+                        <Label styleClass="input-label" text="Jenis Kelamin" GridPane.rowIndex="1" />
+                        <ComboBox fx:id="jenisKelaminCombo" prefWidth="300.0" styleClass="input-field" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                        <Label styleClass="input-label" text="Tinggi (cm)" GridPane.rowIndex="2" />
+                        <TextField fx:id="tinggiField" styleClass="input-field" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+                        <Label styleClass="input-label" text="Berat (kg)" GridPane.rowIndex="3" />
+                        <TextField fx:id="beratField" styleClass="input-field" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+                        <Label styleClass="input-label" text="Aktivitas" GridPane.rowIndex="4" />
+                        <ComboBox fx:id="aktivitasCombo" prefWidth="300.0" styleClass="input-field" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                    </children>
+                </GridPane>
+
+                <Button fx:id="hitungButton" layoutX="200.0" layoutY="480.0" mnemonicParsing="false" onAction="#handleCalculateBMR" prefHeight="50.0" prefWidth="150.0" styleClass="calculate-button" text="Hitung" />
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

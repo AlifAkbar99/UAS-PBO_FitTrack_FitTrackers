@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.Cursor?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" styleClass="root-pane-beige" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="yourpackage.BmiController">
+    <children>
+        <ImageView fx:id="backButton" fitHeight="40.0" fitWidth="40.0" layoutX="40.0" layoutY="30.0" onMouseClicked="#handleGoBack" pickOnBounds="true" preserveRatio="true" styleClass="clickable-icon">
+            <image>
+                <Image url="@../img/arrowred.png" />
+            </image>
+            <cursor><Cursor fx:constant="HAND" /></cursor>
+        </ImageView>
+
+        <AnchorPane layoutX="365.0" layoutY="100.0" prefHeight="520.0" prefWidth="550.0" styleClass="info-card">
+            <children>
+                <HBox alignment="CENTER" layoutX="14.0" layoutY="14.0" prefWidth="520.0" spacing="20.0">
+                    <Button mnemonicParsing="false" styleClass="tab-button-active" text="BMI" />
+                    <Button fx:id="bmrButton" mnemonicParsing="false" onAction="#handleGoToBMR" styleClass="tab-button" text="BMR" />
+                </HBox>
+
+                <VBox alignment="CENTER" layoutX="25.0" layoutY="120.0" prefHeight="250.0" prefWidth="500.0" spacing="30.0">
+                    <children>
+                        <Label styleClass="input-label" text="Tinggi (cm)" />
+                        <TextField fx:id="tinggiField" promptText="Contoh: 170" styleClass="input-field" />
+                        <Label styleClass="input-label" text="Berat (kg)" />
+                        <TextField fx:id="beratField" promptText="Contoh: 65" styleClass="input-field" />
+                    </children>
+                </VBox>
+
+                <Button fx:id="hitungButton" layoutX="200.0" layoutY="420.0" mnemonicParsing="false" onAction="#handleCalculateBMI" prefHeight="50.0" prefWidth="150.0" styleClass="calculate-button" text="Hitung" />
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

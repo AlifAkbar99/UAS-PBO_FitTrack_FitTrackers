@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.Cursor?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" styleClass="root-pane-beige" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="yourpackage.HasilBmiController">
+    <children>
+        <ImageView fx:id="backButton" fitHeight="40.0" fitWidth="40.0" layoutX="40.0" layoutY="30.0" onMouseClicked="#handleGoBack" pickOnBounds="true" preserveRatio="true" styleClass="clickable-icon">
+            <image><Image url="@../img/arrowred.png" /></image>
+            <cursor><Cursor fx:constant="HAND" /></cursor>
+        </ImageView>
+        <Button layoutX="90.0" layoutY="30.0" onAction="#handleGoBack" text="Kembali ke Form" styleClass="calculate-button" style="-fx-background-color: #dE2A2A; -fx-text-fill: white; -fx-font-size: 14px;"/>
+
+        <AnchorPane layoutX="365.0" layoutY="100.0" prefHeight="520.0" prefWidth="550.0" styleClass="info-card">
+            <children>
+                <HBox alignment="CENTER" layoutX="14.0" layoutY="14.0" prefWidth="520.0" spacing="20.0">
+                    <Button mnemonicParsing="false" styleClass="tab-button-active" text="BMI" />
+                    <Button fx:id="bmrButton" mnemonicParsing="false" onAction="#handleGoToBMR" styleClass="tab-button" text="BMR" />
+                </HBox>
+
+                <Label layoutX="225.0" layoutY="80.0" styleClass="card-title" text="Hasil BMI" />
+
+                <HBox alignment="CENTER" layoutX="25.0" layoutY="130.0" prefWidth="500.0" spacing="50.0">
+                    <Label fx:id="tinggiLabel" styleClass="result-display-label" text="Tinggi: 169 cm" />
+                    <Label fx:id="beratLabel" styleClass="result-display-label" text="Berat: 60 kg" />
+                </HBox>
+
+                <StackPane layoutX="50.0" layoutY="250.0" prefHeight="50.0" prefWidth="450.0">
+                    <children>
+                        <HBox>
+                            <Region styleClass="bmi-gauge-kurus" HBox.hgrow="ALWAYS" />
+                            <Region styleClass="bmi-gauge-ideal" HBox.hgrow="ALWAYS" />
+                            <Region styleClass="bmi-gauge-gemuk" HBox.hgrow="ALWAYS" />
+                            <Region styleClass="bmi-gauge-obesitas" HBox.hgrow="ALWAYS" />
+                        </HBox>
+                        <Polygon fx:id="bmiIndicator" fill="WHITE" stroke="BLACK" strokeType="INSIDE"
+                                 points="-10.0, -10.0, 10.0, -10.0, 0.0, 0.0"
+                                 StackPane.alignment="TOP_LEFT" translateY="-15.0"/>
+                    </children>
+                </StackPane>
+
+                <Label fx:id="statusLabel" layoutX="240.0" layoutY="320.0" styleClass="status-label" text="Ideal" />
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

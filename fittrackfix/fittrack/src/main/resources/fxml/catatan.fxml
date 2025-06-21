@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.Cursor?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" styleClass="root-pane-beige" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="yourpackage.CatatanController">
+    <children>
+        <ImageView fx:id="backButton" fitHeight="40.0" fitWidth="40.0" layoutX="40.0" layoutY="30.0" onMouseClicked="#handleGoBack" pickOnBounds="true" preserveRatio="true" styleClass="clickable-icon">
+            <image><Image url="@../img/arrowred.png" /></image>
+            <cursor><Cursor fx:constant="HAND" /></cursor>
+        </ImageView>
+        <Button layoutX="90.0" layoutY="30.0" onAction="#handleGoBack" text="Kembali ke Menu" styleClass="calculate-button" style="-fx-background-color: #dE2A2A; -fx-text-fill: white;"/>
+        <Label layoutX="580.0" layoutY="30.0" styleClass="title-label-red" text="Catatan"/>
+
+
+        <AnchorPane layoutX="240.0" layoutY="100.0" prefHeight="550.0" prefWidth="800.0" styleClass="info-card-beige">
+            <children>
+                <Label layoutX="30.0" layoutY="30.0" styleClass="card-title-red" text="Pilih Tanggal:" />
+                <DatePicker fx:id="datePicker" layoutX="200.0" layoutY="30.0" onAction="#handleDateChange" prefWidth="200.0" />
+
+                <ListView fx:id="activityListView" layoutX="30.0" layoutY="90.0" prefHeight="430.0" prefWidth="740.0" styleClass="activity-list-view" />
+
+                <Button fx:id="addButton" layoutX="720.0" layoutY="20.0" onAction="#handleAddActivity" styleClass="add-button" text="+">
+                    <cursor><Cursor fx:constant="HAND" /></cursor>
+                </Button>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
